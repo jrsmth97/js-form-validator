@@ -8,8 +8,9 @@ const validate = new Validator()
 validate
         .setForm('thisForm') // Form Id         @required
         .setRules({         // Validation Rules @required
-            formName: 'required|minUpper:1|minDigit:1|minSpecialChar:2|minLower:2',
+            formName: 'required',
             formEmail: 'required|email',
+            formPassword: 'required|min:8|minUpper:1|minDigit:1|minSpecialChar:2',
             formPhone: 'required|number',
             formAddress: 'required|min:10',
         })                 
