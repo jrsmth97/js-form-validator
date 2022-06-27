@@ -6,14 +6,14 @@
 const validate = new Validator()
 
 validate
-        .setForm('thisForm')
-        .setRules({
+        .setForm('thisForm') // Form Id         @required
+        .setRules({         // Validation Rules @required
             formName: 'required|minUpper:1|minDigit:1|minSpecialChar:2|minLower:2',
             formEmail: 'required|email',
             formPhone: 'required|number',
             formAddress: 'required|min:10',
-        })
-        .setMessages({
+        })                 
+        .setMessages({       // Custom Validation Messages @optional
             formName: {
                 required: '.....',
                 minUpper: 'Min $ ...',
@@ -24,6 +24,6 @@ validate
                 email: '...'
             }
         })
-        .run()
+        .run()  // running validation
 
 ```
