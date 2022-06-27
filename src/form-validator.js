@@ -84,39 +84,39 @@ class Validation {
                 switch (rule.rule) {
                   case "required":
                     valid = Validator._require(form);
-                    message = this.#messages[formName[i]]?.['required'] || 'Form harus diisi'
+                    message = this.#messages[formName[i]]?.['required'] || 'Form is required'
                     break;
                   case "email":
                     valid = Validator._email(form);
-                    message = this.#messages[formName[i]]?.['email'] || 'Email tidak valid'
+                    message = this.#messages[formName[i]]?.['email'] || 'Email not valid'
                     break;
                   case "number":
                     valid = Validator._number(form);
-                    message = this.#messages[formName[i]]?.['number'] || 'Input harus angka'
+                    message = this.#messages[formName[i]]?.['number'] || 'Must be a number'
                     break;
                   case "max":
                     valid = Validator._max(ruleValue, form);
-                    message = this.#messages[formName[i]]?.['max'] || `Maksimal ${ruleValue} karakter`
+                    message = this.#messages[formName[i]]?.['max'] || `Max ${ruleValue} character`
                     break;
                   case "min":
                     valid = Validator._min(ruleValue, form);
-                    message = this.#messages[formName[i]]?.['min'] || `Minimal ${ruleValue} karakter`
+                    message = this.#messages[formName[i]]?.['min'] || `Min ${ruleValue} character`
                     break;
                   case "minUpper":
                     valid = Validator._minUpperCase(ruleValue, form);
-                    message = this.#messages[formName[i]]?.['minUpper']?.replace(/[$]/g, ruleValue) || `Minimal ${ruleValue} karakter uppercase`
+                    message = this.#messages[formName[i]]?.['minUpper']?.replace(/[$]/g, ruleValue) || `Min ${ruleValue} uppercase character`
                     break;
                   case "minLower":
                     valid = Validator._minLowerCase(ruleValue, form);
-                    message = this.#messages[formName[i]]?.['minLower']?.replace(/[$]/g, ruleValue) || `Minimal ${ruleValue} karakter lowercase`
+                    message = this.#messages[formName[i]]?.['minLower']?.replace(/[$]/g, ruleValue) || `Min ${ruleValue} lowercase character lowercase`
                     break;
                   case "minDigit":
                     valid = Validator._minDigit(ruleValue, form);
-                    message = this.#messages[formName[i]]?.['minDigit']?.replace(/[$]/g, ruleValue) || `Minimal ${ruleValue} karakter angka`
+                    message = this.#messages[formName[i]]?.['minDigit']?.replace(/[$]/g, ruleValue) || `Min ${ruleValue} number character`
                     break;
                   case "minSpecialChar":
                     valid = Validator._minSpecialChar(ruleValue, form);
-                    message = this.#messages[formName[i]]?.['minSpecialChar']?.replace(/[$]/g, ruleValue) || `Minimal ${ruleValue} karakter special`
+                    message = this.#messages[formName[i]]?.['minSpecialChar']?.replace(/[$]/g, ruleValue) || `Min ${ruleValue} special character`
                     break;
                 }
 
